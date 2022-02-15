@@ -20,58 +20,72 @@ def test_linear_search():
 	assert linear_search([1,2,3,4,5], 1) == 0
 	assert linear_search([1,2,3,4,5], 6) == -1
 
+
 def binary_search(mylist, key):
 	""" done. """
 	return _binary_search(mylist, key, 0, len(mylist)-1)
 
 def _binary_search(mylist, key, left, right):
-	"""
-	Recursive implementation of binary search.
+  while (left<= right ):
+    middle = (left + right)//2
+    if key == mylist[middle]:
+      return middle
+      
+    elif key > mylist[middle]:
+      left = middle + 1 
+     # return _binary_search(mylist, key, left, right)
+      
+    elif key < mylist[middle]:
+      right = middle - 1
+     # return _binary_search(mylist, key, left, right)
 
-	Params:
-	  mylist....list to search
-	  key.......search key
-	  left......left index into list to search
-	  right.....right index into list to search
-
-	Returns:
-	  index of key in mylist, or -1 if not present.
-	"""
-	### TODO
-
-	###
+  
+  return -1
 
 def test_binary_search():
 	assert binary_search([1,2,3,4,5], 5) == 4
 	assert binary_search([1,2,3,4,5], 1) == 0
 	assert binary_search([1,2,3,4,5], 6) == -1
-	### TODO: add two more tests here.
+	assert binary_search([1,2,3,4,5], 2) == 1
+	assert binary_search([1,2,3,4,5], 4) == 3
+	#assert binary_search([1,2,3,4,5], 6) == -1
 
-	###
-
-
+ # assert binary_search([1,2,3,4,5], 2) == 1
+  #assert binary_search([1,2,3,4,5], 4) == 3
 def time_search(search_fn, mylist, key):
 	"""
 	Return the number of milliseconds to run this
 	search function on this list.
-
-	Note 1: `sort_fn` parameter is a function.
+ create start and end time for function( search_fn) and subtract to get total time
+ 
+	Note 1: `search_fn` parameter is a function.
 	Note 2: time.time() returns the current time in seconds. 
 	You'll have to multiple by 1000 to get milliseconds.
-
+ search_fn = time.time()
+ 
+ start_time = time.time()
+ for mylist in search_fn:
+ if mylist.get(key):
+   end_time = time.time()
+   return (end_time - start_time) * 1000
+  else:
+    return -1;
+  
 	Params:
-	  sort_fn.....the search function
+	  search_fn.....the search function
 	  mylist......the list to search
 	  key.........the search key 
 
 	Returns:
 	  the number of milliseconds it takes to run this
 	  search function on this input.
+    return time.time() * 1000
 	"""
 	### TODO
+  #create start and end time for function( search_fn) and subtract to get total time
 
-	###
 
+	#
 def compare_search(sizes=[1e1, 1e2, 1e3, 1e4, 1e5, 1e6, 1e7]):
 	"""
 	Compare the running time of linear_search and binary_search
