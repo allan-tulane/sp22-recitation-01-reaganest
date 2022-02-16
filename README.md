@@ -49,10 +49,13 @@ We'll compare the running times of `linear_search` and `binary_search` empirical
 - [ ] 4. Describe the worst case input value of `key` for `linear_search`? for `binary_search`? 
 
 **TODO: your answer goes here**
+Linear_search worse case input is infinity and results in a time complexity is O(n).
+binary_search worse case input is when the element is not in list and has a time complexity is log_2(n).
 
-- [ ] 5. Describe the best case input value of `key` for `linear_search`? for `binary_search`? 
 
-**TODO: your answer goes here**
+- [ ] 5. Describe the best case input value of `key` for `linear_search`? for `binary_search`?
+
+Linear_search best case input value has a time complexity ofO(1) when the index is found at the first search. In the case of binary_search it is also O(1) time complexity when the index is found at the middle.
 
 - [ ] 6. Complete the `time_search` function to compute the running time of a search function. Note that this is an example of a "higher order" function, since one of its parameters is another function.
 
@@ -60,7 +63,15 @@ We'll compare the running times of `linear_search` and `binary_search` empirical
 
 - [ ] 8. Call `print_results(compare_search())` and paste the results here:
 
-**TODO: add your timing results here**
+|            n |   linear |   binary |
+|--------------|----------|----------|
+|       10.000 |    0.003 |    0.004 |
+|      100.000 |    0.003 |    0.004 |
+|     1000.000 |    0.003 |    0.004 |
+|    10000.000 |    0.003 |    0.004 |
+|   100000.000 |    0.003 |    0.004 |
+|  1000000.000 |    0.003 |    0.004 |
+| 10000000.000 |    0.003 |    0.004 |
 
 - [ ] 9. The theoretical worst-case running time of linear search is $O(n)$ and binary search is $O(log_2(n))$. Do these theoretical running times match your empirical results? Why or why not?
 
