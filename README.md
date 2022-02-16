@@ -63,15 +63,15 @@ Linear_search best case input value has a time complexity ofO(1) when the index 
 
 - [ ] 8. Call `print_results(compare_search())` and paste the results here:
 
-|            n |   linear |   binary |
-|--------------|----------|----------|
-|       10.000 |    0.003 |    0.004 |
-|      100.000 |    0.003 |    0.004 |
-|     1000.000 |    0.003 |    0.004 |
-|    10000.000 |    0.003 |    0.004 |
-|   100000.000 |    0.003 |    0.004 |
-|  1000000.000 |    0.003 |    0.004 |
-| 10000000.000 |    0.003 |    0.004 |
+|        n |        linear |     binary |
+|----------|---------------|------------|
+|       10 |    0.00357628 | 0.00357628 |
+|      100 |    0.01716614 | 0.00476837 |
+|     1000 |    0.30612946 | 0.00810623 |
+|    10000 |    1.89733505 | 0.01168251 |
+|   100000 |   23.18477631 | 0.02121925 |
+|  1000000 |  400.09832382 | 0.02455711 |
+| 10000000 | 3922.14965820 | 0.03099442 |
 
 - [ ] 9. The theoretical worst-case running time of linear search is $O(n)$ and binary search is $O(log_2(n))$. Do these theoretical running times match your empirical results? Why or why not?
 
@@ -79,5 +79,11 @@ Linear_search best case input value has a time complexity ofO(1) when the index 
 
 - [ ] 10. Binary search assumes the input list is already sorted. Assume it takes $\Theta(n^2)$ time to sort a list of length $n$. Suppose you know ahead of time that you will search the same list $k$ times. 
   + What is worst-case complexity of searching a list of $n$ elements $k$ times using linear search? **TODO: your answer goes here**
+  + - is this sorted or unsorted
+    - O(n)
   + For binary search? **TODO: your answer goes here**
-  + For what values of $k$ is it more efficient to first sort and then use binary search versus just using linear search without sorting? **TODO: your answer goes here**
+  + O(logn)
+  + For what values of $k$ is it more efficient to first sort and then use binary search versus just using linear search without sorting? **TODO: your answer goes here** large values of k?
+k n > n^2 + klgn
+k (n-lgn)>n^2
+k > N^2/n-lgn
