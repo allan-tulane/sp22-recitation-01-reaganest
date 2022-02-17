@@ -47,23 +47,8 @@ def test_binary_search():
 	assert binary_search([1,2,3,4,5], 4) == 3
 	
 def time_search(search_fn, mylist, key):
-	"""
-	Return the number of milliseconds to run this
-	search function on this list.
- create start and end time for function( search_fn) and subtract to get total time
- 
-	Note 1: `search_fn` parameter is a function.
-	Note 2: time.time() returns the current time in seconds. 
-  	Params:
-	  search_fn.....the search function
-	  mylist......the list to search
-	  key.........the search key 
 
-	Returns:
-	  the number of milliseconds it takes to run this search function on this input.
-	"""
-	### TODO
-  #create start and end time for function( search_fn) and subtract to get total time
+	
   
 	start_time = time.time()
 	search_fn(mylist,key)
@@ -75,11 +60,13 @@ def time_search(search_fn, mylist, key):
 def compare_search(sizes=[1e1, 1e2, 1e3, 1e4, 1e5, 1e6, 1e7]):
   values = []
   for i in sizes:
-    my_list = tuple(range(int(i)))
+    my_list = list(range(int(i)))
+
     linear_search_time=time_search(linear_search,my_list,-1)
     binary_search_time=time_search(binary_search,my_list,-1)
     values.append([len(my_list),linear_search_time, binary_search_time])
-  return values
+    
+  return tuple(values)
 
 def print_results(results):
 	""" done """
